@@ -1,7 +1,7 @@
 {
   "name": "snout",
   "version": "1.0.0",
-  "main": "expo/AppEntry.js",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -9,13 +9,20 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
     "expo": "~51.0.28",
+    "expo-router": "^3.5.23",
+    "expo-sqlite": "~14.0.6",
     "expo-status-bar": "~1.12.1",
-    "react": "18.2.0",
-    "react-native": "0.74.5"
+    "nativewind": "^2.0.11",
+    "postcss": "^8.4.47",
+    "react": "^18.2.0",
+    "react-native": "0.74.5",
+    "react-native-qrcode-svg": "^6.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "tailwindcss": "^3.3.2"
   },
   "private": true
 }
