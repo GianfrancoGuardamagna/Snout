@@ -2,8 +2,10 @@ import { Text, View, TextInput, Button } from "react-native";
 import ServiciosIndex from "../../src/components/lobbyButtons.js";
 import React, { useState, useEffect } from "react";
 import { addMascota, createTable } from "../../utils/data/db_manger.js";
+import { useRouter } from "expo-router";
 
 export default function CrearMascota() {
+  const router = useRouter();
   const [nombre, setNombre] = useState("");
   const [edad, setEdad] = useState("");
   const [raza, setRaza] = useState("");
@@ -15,7 +17,10 @@ export default function CrearMascota() {
   const handleInscribirMascota = () => {
     addMascota(nombre, edad, raza, (result) => {
       console.log("Mascota inscrita:", result);
+    }).then((res) => {
+      console.log(res);
     });
+    // router.push("./misMascotas");
   };
 
   return (

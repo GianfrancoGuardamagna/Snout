@@ -13,17 +13,18 @@ export const createTable = async () => {
 };
 export const addMascota = async (nombre, edad, raza) => {
   const db = await SQLite.openDatabaseAsync("mascotas.db");
-  await db.runAsync(
+  const result = await db.runAsync(
     `INSERT INTO mascota (nombre, edad, raza) VALUES (?, ?, ?);`,
     [nombre, edad, raza]
   );
+  return result.insertId;
 };
 
 export const getMascotas = async () => {
   try {
     const db = await SQLite.openDatabaseAsync("mascotas.db");
     const result = await db.getAllAsync(`SELECT * FROM mascota;`);
-    return console.log(result);
+    return result;
   } catch (e) {
     console.log(e);
     return [];
